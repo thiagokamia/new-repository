@@ -1,0 +1,23 @@
+/*Exercicio 1/ 
+select 
+  property_type as tipos_de_propriedade, 
+  count (distinct id) as anuncios
+from listing
+where state = 'Rio de Janeiro'
+group by property_type
+order by anuncios DESC
+limit 10;
+
+/*Exercicio 2/ 
+select 
+  date_part('week', dt_data::date) AS semana, 
+  count(distinct l.id) as anuncios
+from calendar as c 
+inner join listing as l
+  on c.listing_id = l.id
+where 
+  dt_data::date between '2019-10-01' and '2019-10-31'
+  and available = 't'
+  and property_type = 'Apartment'
+group by semana
+order by semana;
