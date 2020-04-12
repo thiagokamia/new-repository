@@ -1,4 +1,4 @@
-/*Exercicio 1/ 
+/*Exercicio 1*/ 
 select 
   property_type as tipos_de_propriedade, 
   count (distinct id) as anuncios
@@ -8,7 +8,7 @@ group by property_type
 order by anuncios DESC
 limit 10;
 
-/*Exercicio 2/ 
+/*Exercicio 2*/ 
 select 
   date_part('week', dt_data::date) AS semana, 
   count(distinct l.id) as anuncios
